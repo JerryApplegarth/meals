@@ -11,28 +11,28 @@ const Stack = createStackNavigator();
 export default function App() {
 	return (
 		<>
-			<NavigationContainer>
-				<Stack.Navigator>
-					<Stack.Screen
-						name="Meals Categories"
-						component={CategoriesScreen}
-					/>
-					<Stack.Screen
-						name="Meals Overview"
-						component={MealsOverviewScreen}
-					/>
-				</Stack.Navigator>
-			</NavigationContainer>
-
-			<StatusBar style="light" />
+			<View style={styles.container}>
+				<NavigationContainer>
+					<Stack.Navigator>
+						<Stack.Screen
+							name="Meals Categories"
+							component={CategoriesScreen}
+						/>
+						<Stack.Screen
+							name="Meals Overview"
+							component={MealsOverviewScreen}
+						/>
+					</Stack.Navigator>
+				</NavigationContainer>
+			</View>
+			<StatusBar style="auto" />
 		</>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		grid: 1,
-		gridTemplateRow: "repeat(auto-fill, minmax(150px, 2fr))",
+		flex: 1,
 		backgroundColor: Colors.black,
 	},
 });
