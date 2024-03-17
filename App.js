@@ -12,6 +12,7 @@ export default function App() {
 	return (
 		<>
 			<View style={styles.container}>
+				<StatusBar style="light" />
 				<NavigationContainer>
 					<Stack.Navigator
 						screenOptions={{
@@ -24,9 +25,9 @@ export default function App() {
 							},
 						}}>
 						<Stack.Screen
-							name="MealsCategories"
+							name="Meals Categories"
 							component={CategoriesScreen}
-							options={{ title: "Categories" }}
+							options={{ title: "Meals Categories" }}
 						/>
 						<Stack.Screen
 							name="Meals Overview"
@@ -36,7 +37,6 @@ export default function App() {
 					</Stack.Navigator>
 				</NavigationContainer>
 			</View>
-			<StatusBar style="auto" />
 		</>
 	);
 }
