@@ -17,6 +17,8 @@ const MealsOverviewScreen = ({ route }) => {
 			duration: item.duration,
 			complexity: item.complexity,
 			affordability: item.affordability,
+			ingredients: item.ingredients,
+			steps: item.steps,
 		};
 		return <MealItem {...mealItemProps} />;
 	}

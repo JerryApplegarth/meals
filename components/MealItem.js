@@ -13,10 +13,9 @@ const MealItem = ({ title, imageUrl, duration, complexity, affordability }) => {
 			<View style={styles.mealItem}>
 				<Pressable
 					android_ripple={Colors.darkGray}
-					style={({ pressed }) => [
-						styles.button,
-						pressed ? styles.buttonPressed : null,
-					]}>
+					style={({ pressed }) =>
+						pressed ? styles.buttonPressed : null
+					}>
 					<View style={styles.innerContainer}>
 						<Image
 							style={styles.image}
@@ -72,5 +71,10 @@ const styles = StyleSheet.create({
 		padding: 10,
 		overflow: "hidden",
 		flexWrap: "wrap",
+	},
+	item: {
+		flex: 1,
+		flexWrap: "wrap",
+		marginTop: 10,
 	},
 });
