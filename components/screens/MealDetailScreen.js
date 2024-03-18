@@ -1,14 +1,43 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	Image,
+	ScrollView,
+	Button,
+} from "react-native";
 import { MEALS } from "../../data/Dummy-data";
 import MealDetails from "../MealDetails";
 import Colors from "../constants/Colors";
 import Subtitle from "../constants/Subtitle";
 import List from "../constants/List";
+import { useLayoutEffect } from "react";
 
-const MealDetailScreen = ({ route }) => {
+const MealDetailScreen = ({ route, navigation }) => {
 	const mealId = route.params.mealId;
 
 	const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
+	function headerButtonPressHandle() {
+		console.log("Favorite");
+	}
+
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			headerRight: () => {
+				return (
+					<Button
+						onPress={() => {
+							headerButtonPressHandle();
+						}}
+						title="Favorite"
+						color={Colors.orange}
+						style={styles.button}
+					/>
+				);
+			},
+		});
+	}, [navigation, headerButtonPressHandle]);
 
 	return (
 		<ScrollView style={styles.rootContainer}>
@@ -40,9 +69,9 @@ const MealDetailScreen = ({ route }) => {
 export default MealDetailScreen;
 
 const styles = StyleSheet.create({
-    rootContainer: {
-        marginBottom: 32,
-    },
+	rootContainer: {
+		marginBottom: 32,
+	},
 	image: {
 		width: "90%",
 		height: 250,
@@ -73,4 +102,7 @@ const styles = StyleSheet.create({
 	outer: {
 		alignItems: "center",
 	},
+    button: {
+        marginRight: 18,
+    },
 });
