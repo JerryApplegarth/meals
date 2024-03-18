@@ -9,6 +9,7 @@ import {
 
 import Colors from "./constants/Colors";
 import { useNavigation } from "@react-navigation/native";
+import MealDetails from "./MealDetails";
 
 const MealItem = ({
 	id,
@@ -43,11 +44,11 @@ const MealItem = ({
 
 						<Text style={styles.title}>{title}</Text>
 					</View>
-					<View style={styles.details}>
-						<Text>Duration: {duration} minutes</Text>
-						<Text>Complexity: {complexity.toUpperCase()}</Text>
-						<Text>Cost: {affordability.toUpperCase()}</Text>
-					</View>
+					<MealDetails
+						duration={duration}
+						complexity={complexity}
+						affordability={affordability}
+					/>
 				</Pressable>
 			</View>
 		</>
@@ -84,17 +85,5 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		padding: 10,
 	},
-	details: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-		alignItems: "center",
-		padding: 10,
-		overflow: "hidden",
-		flexWrap: "wrap",
-	},
-	item: {
-		flex: 1,
-		flexWrap: "wrap",
-		marginTop: 10,
-	},
+	
 });
