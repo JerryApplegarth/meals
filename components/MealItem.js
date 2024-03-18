@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 		margin: 16,
 		borderRadius: 10,
 		overflow: Platform.OS === "android" ? "hidden" : "visible",
-		backgroundColor: Colors.lightBlue,
+		backgroundColor: Colors.lightOrange,
 		padding: 20,
 		elevation: 5,
 		shadowColor: Colors.blue,
@@ -85,5 +85,4 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		padding: 10,
 	},
-	
 });
