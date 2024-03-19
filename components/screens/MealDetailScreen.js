@@ -12,6 +12,7 @@ import Colors from "../constants/Colors";
 import Subtitle from "../constants/Subtitle";
 import List from "../constants/List";
 import { useLayoutEffect } from "react";
+import IconButton from "../IconButton";
 
 const MealDetailScreen = ({ route, navigation }) => {
 	const mealId = route.params.mealId;
@@ -19,20 +20,17 @@ const MealDetailScreen = ({ route, navigation }) => {
 	const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
 	function headerButtonPressHandle() {
-		console.log("Favorite");
+		console.log("Favorite button pressed");
 	}
 
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			headerRight: () => {
 				return (
-					<Button
-						onPress={() => {
-							headerButtonPressHandle();
-						}}
-						title="Favorite"
-						color={Colors.orange}
-						style={styles.button}
+					<IconButton
+						icon="star"
+						color="black"
+						onPress={headerButtonPressHandle}
 					/>
 				);
 			},
@@ -102,7 +100,4 @@ const styles = StyleSheet.create({
 	outer: {
 		alignItems: "center",
 	},
-    button: {
-        marginRight: 18,
-    },
 });
