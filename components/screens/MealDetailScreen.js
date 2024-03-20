@@ -4,7 +4,7 @@ import {
 	View,
 	Image,
 	ScrollView,
-	Button,
+
 } from "react-native";
 import { MEALS } from "../../data/Dummy-data";
 import MealDetails from "../MealDetails";
